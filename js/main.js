@@ -66,7 +66,7 @@ var zodiacArray = [
 function searchZodiac() {
     var userInput = document.getElementById('input');
 
-    for (i = 0; i <= zodiacArray.length; i++) {
+    for (i = 0; i < zodiacArray.length; i++) {
         if (userInput.value.toUpperCase() == zodiacArray[i].name.toUpperCase()) {
             document.getElementById('signName').innerText = zodiacArray[i].name;
 
@@ -74,6 +74,30 @@ function searchZodiac() {
 
             document.getElementById('traits').innerText = zodiacArray[i].trait;
 
+            break;
+
+        } else if (i == zodiacArray.length - 1) {
+            document.getElementById('signName').innerText = "Sorry, that sign does not exist.";
+            document.getElementById('photo').innerHTML = null;
+            document.getElementById('traits').innerText = null;
+
         }
     }
 }
+
+
+//works but doesnt close right if not found
+//function searchZodiac() {
+//    var userInput = document.getElementById('input');
+//
+//    for (i = 0; i < zodiacArray.length; i++) {
+//        if (userInput.value.toUpperCase() == zodiacArray[i].name.toUpperCase()) {
+//            document.getElementById('signName').innerText = zodiacArray[i].name;
+//
+//            document.getElementById('photo').innerHTML = zodiacArray[i].photo;
+//
+//            document.getElementById('traits').innerText = zodiacArray[i].trait;
+//
+//        }
+//    }
+//}
